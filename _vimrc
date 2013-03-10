@@ -15,12 +15,20 @@ set showmatch
 set incsearch
 set ignorecase
 set autoindent
+set copyindent
+
 set history=1000
+set undolevels=1000
+
 set cursorline
 set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set title
+
+set nobackup
+set noswapfile
 
 set background=dark
 colorscheme wombat
