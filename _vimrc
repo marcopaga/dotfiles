@@ -27,6 +27,9 @@ set tabstop=2
 set softtabstop=2
 set title
 
+" C-a and C-x interpret every number as decimal formatted 
+set nrformats=
+
 set nobackup
 set noswapfile
 
