@@ -42,4 +42,4 @@ set nobackup
 set noswapfile
 
 set background=dark
-colorscheme wombat
+colorscheme solarized
