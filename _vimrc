@@ -15,6 +15,12 @@ autocmd VimEnter * call StartUp()
 
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 filetype plugin indent on
+
+let mapleader=" "
+
+" Buffer management
+:nmap <C-n> :bnext<CR>
+:nmap <C-p> :bprev<CR>
  
 syntax on
 set number
