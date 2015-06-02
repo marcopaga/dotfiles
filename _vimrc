@@ -47,5 +47,5 @@ set nrformats=
 set nobackup
 set noswapfile
 
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
