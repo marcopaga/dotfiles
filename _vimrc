@@ -1,18 +1,10 @@
 set nocompatible
 
 " Pathogen
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+"call pathogen#infect()
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
  
-function! StartUp()
-      if 0 == argc()
-                NERDTree
-      end
-endfunction
-
-autocmd VimEnter * call StartUp()
-
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 filetype plugin indent on
 
