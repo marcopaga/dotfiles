@@ -253,6 +253,7 @@ layers configuration. You are free to put any user code."
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
   (setq org-mobile-inbox-for-pull "~/Dropbox/Notes/Inbox.org")
   (setq org-agenda-include-diary t)
+  (setq org-log-done 'note)
    )
 
 ;; Do not write anything past this comment. This is where Emacs will
