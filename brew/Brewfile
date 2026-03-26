@@ -36,3 +36,4 @@ brew "eugene1g/safehouse/agent-safehouse"  # kernel-level sandbox for LLM agents
 
 # === Casks ===
 cask "emacs-app"
+cask "ghostty"
