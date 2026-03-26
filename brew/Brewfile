@@ -21,6 +21,8 @@ brew "zsh"
 brew "autojump"
 brew "fzf"
 brew "tmux"
+brew "zsh-autosuggestions"        # fish-style inline history suggestions
+brew "zsh-syntax-highlighting"    # real-time command syntax coloring
 
 # === Dev tools ===
 brew "vim"

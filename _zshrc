@@ -14,9 +14,17 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # Standard plugins: $ZSH/plugins/  Custom plugins: $ZSH_CUSTOM/plugins/
 # Add wisely — too many plugins slow down shell startup.
-plugins=(git kubectl kubectx dotenv autojump nvm)
+plugins=(git kubectl kubectx dotenv autojump nvm asdf extract colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
+
+# === zsh plugins (installed via Homebrew) ===
+# zsh-autosuggestions: fish-style inline history suggestions (→ or Tab to accept)
+[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && \
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-syntax-highlighting: real-time command syntax coloring (must be sourced last)
+[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && \
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # === Editor ===
 export EDITOR="vim"
