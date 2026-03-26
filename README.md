@@ -1,14 +1,15 @@
 # dotfiles
 
-Personal configuration files for Vim, tmux, and Spacemacs.
+Personal configuration files for Vim, tmux, Spacemacs, and zsh.
 
 ## Files
 
 | File | Symlink target | Purpose |
 |------|---------------|---------|
 | `_vimrc` | `~/.vimrc` | Vim config — vim-plug, gruvbox, fzf, LSP |
-| `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Solarized dark |
+| `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Catppuccin Mocha |
 | `_spacemacs` | `~/.spacemacs` | Spacemacs config — Evil mode, Clojure, org-mode |
+| `_zshrc` | `~/.zshrc` | zsh config — oh-my-zsh, NVM, Homebrew PATH |
 
 ## Setup
 
@@ -16,6 +17,14 @@ Personal configuration files for Vim, tmux, and Spacemacs.
 ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/Projects/dotfiles/_spacemacs ~/.spacemacs
+ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
+```
+
+If oh-my-zsh is not installed, the shell will print a reminder and abort.
+Install it manually first:
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Open Vim once — vim-plug and all plugins install automatically.
