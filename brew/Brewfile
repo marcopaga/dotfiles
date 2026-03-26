@@ -26,6 +26,7 @@ brew "tmux"
 brew "vim"
 brew "gh"
 brew "nvm"
+brew "ruby"          # required for tmuxinator (gem install tmuxinator)
 
 # === Casks ===
 cask "emacs-app"

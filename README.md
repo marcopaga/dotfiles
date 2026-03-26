@@ -43,6 +43,30 @@ bash brew/install.sh
 Already-installed packages are skipped silently. Existing package versions are
 not upgraded — run `brew upgrade` separately if needed.
 
+The install script also installs the `tmuxinator` Ruby gem via the
+Homebrew-managed Ruby automatically.
+
+## tmuxinator
+
+[tmuxinator](https://github.com/tmuxinator/tmuxinator) manages named tmux
+session layouts defined as YAML files in `~/.config/tmuxinator/`.
+
+| Command | Action |
+|---------|--------|
+| `mux list` / `muxl` | List saved projects |
+| `mux open <name>` / `muxo <name>` | Create or edit a project |
+| `mux start <name>` / `muxs <name>` | Start a session |
+| `mux stop <name>` | Stop a session |
+| `mux new <name>` | Create a new project |
+| `mux delete <name>` | Delete a project |
+
+Project files live in `~/.config/tmuxinator/<name>.yml`. To track them in this
+repo, symlink individual project files:
+
+```sh
+ln -s ~/Projects/dotfiles/tmuxinator/myproject.yml ~/.config/tmuxinator/myproject.yml
+```
+
 ## Usage
 
 ```sh

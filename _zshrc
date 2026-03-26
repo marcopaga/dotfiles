@@ -18,12 +18,24 @@ plugins=(git kubectl kubectx dotenv autojump nvm)
 
 source $ZSH/oh-my-zsh.sh
 
+# === Editor ===
+export EDITOR="vim"
+export VISUAL="vim"
+
 # === PATH ===
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Users/marco/.rd/bin:$PATH"     ### MANAGED BY RANCHER DESKTOP (DO NOT EDIT)
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Users/marco/.opencode/bin:$PATH"
+# Homebrew Ruby gems (e.g. tmuxinator)
+# /opt/homebrew/opt/ruby is the stable unversioned symlink maintained by Homebrew.
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# Gem executables live under the versioned gems dir; use a glob to avoid hardcoding the version.
+for _gem_bin in /opt/homebrew/lib/ruby/gems/*/bin; do
+  export PATH="$_gem_bin:$PATH"
+done
+unset _gem_bin
 
 # === NVM ===
 export NVM_DIR="$HOME/.nvm"
@@ -60,6 +72,18 @@ test -f $ASYNCAPI_AC_ZSH_SETUP_PATH && source $ASYNCAPI_AC_ZSH_SETUP_PATH
 alias ta='tmux attach'
 alias tl='tmux ls'
 alias t='tmux attach || tmux'
+
+# === tmuxinator ===
+# Shell completion — glob avoids hardcoding the gem version in the path.
+for _mux_comp in /opt/homebrew/lib/ruby/gems/*/gems/tmuxinator-*/completion/tmuxinator.zsh; do
+  [ -f "$_mux_comp" ] && source "$_mux_comp"
+done
+unset _mux_comp
+# Convenient short aliases
+alias mux='tmuxinator'
+alias muxs='tmuxinator start'
+alias muxo='tmuxinator open'
+alias muxl='tmuxinator list'
 
 # === SAFEHOUSE CONFIG https://agent-safehouse.dev/ ===
 safe() { safehouse --add-dirs-ro=~/Projects --enable=docker,kubectl "$@"; }

@@ -19,4 +19,13 @@ fi
 echo "Installing packages from Brewfile..."
 brew bundle --file="$BREWFILE" --no-upgrade
 
+# Install tmuxinator gem using the Homebrew-managed Ruby
+echo "Installing tmuxinator gem..."
+GEM="$(brew --prefix ruby)/bin/gem"
+if "$GEM" list tmuxinator -i &>/dev/null; then
+  echo "  tmuxinator already installed, skipping."
+else
+  "$GEM" install tmuxinator
+fi
+
 echo "Done."
