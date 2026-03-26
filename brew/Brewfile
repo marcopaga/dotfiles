@@ -1,0 +1,31 @@
+# Brewfile — curated list of explicitly installed Homebrew packages.
+# Install everything: bash brew/install.sh
+# Add/remove entries here manually as your setup evolves.
+# Do NOT commit auto-generated output from `brew bundle dump` — keep this curated.
+
+# === Core utilities ===
+brew "curl"
+brew "wget"
+brew "git"
+brew "tree"
+brew "fd"
+brew "bat"
+brew "ripgrep"
+brew "jq"
+brew "yq"
+brew "htop"
+brew "elinks"
+
+# === Shell & terminal ===
+brew "zsh"
+brew "autojump"
+brew "fzf"
+brew "tmux"
+
+# === Dev tools ===
+brew "vim"
+brew "gh"
+brew "nvm"
+
+# === Casks ===
+cask "emacs-app"

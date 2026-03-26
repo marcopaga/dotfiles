@@ -29,6 +29,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Open Vim once — vim-plug and all plugins install automatically.
 
+## Homebrew packages
+
+`brew/Brewfile` contains the curated list of explicitly installed packages.
+Edit it by hand to add or remove packages — do not generate it with `brew bundle dump`.
+
+Install all missing packages on a new system:
+
+```sh
+bash brew/install.sh
+```
+
+Already-installed packages are skipped silently. Existing package versions are
+not upgraded — run `brew upgrade` separately if needed.
+
 ## Usage
 
 ```sh
