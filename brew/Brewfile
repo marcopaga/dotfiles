@@ -26,6 +26,7 @@ brew "zsh-syntax-highlighting"    # real-time command syntax coloring
 
 # === Dev tools ===
 brew "vim"
+brew "neovim"
 brew "gh"
 brew "nvm"
 brew "ruby"          # required for tmuxinator (gem install tmuxinator)
