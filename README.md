@@ -1,11 +1,12 @@
 # dotfiles
 
-Personal configuration files for Vim, tmux, Spacemacs, and zsh.
+Personal configuration files for Neovim, Vim, tmux, Spacemacs, and zsh.
 
 ## Files
 
-| File | Symlink target | Purpose |
-|------|---------------|---------|
+| File / Directory | Symlink target | Purpose |
+|------------------|---------------|---------|
+| `nvim/` | `~/.config/nvim/` | Neovim config — LazyVim, obsidian.nvim |
 | `_vimrc` | `~/.vimrc` | Vim config — vim-plug, gruvbox, fzf, LSP |
 | `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Catppuccin Mocha |
 | `_spacemacs` | `~/.spacemacs` | Spacemacs config — Evil mode, Clojure, org-mode |
@@ -14,11 +15,15 @@ Personal configuration files for Vim, tmux, Spacemacs, and zsh.
 ## Setup
 
 ```sh
+ln -s ~/Projects/dotfiles/nvim ~/.config/nvim
 ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/Projects/dotfiles/_spacemacs ~/.spacemacs
 ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
 ```
+
+If `~/.config/nvim` already exists, remove or back it up before symlinking.
+Open Neovim once — lazy.nvim bootstraps itself and installs all plugins automatically.
 
 If oh-my-zsh is not installed, the shell will print a reminder and abort.
 Install it manually first:
@@ -28,6 +33,57 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 Open Vim once — vim-plug and all plugins install automatically.
+
+## Neovim
+
+The `nvim/` directory is a [LazyVim](https://lazyvim.github.io/) starter with custom plugins layered on top.
+Symlink it to `~/.config/nvim` (see Setup above) and open Neovim — lazy.nvim will install everything on first launch.
+
+### Plugins
+
+| Plugin | Purpose |
+|--------|---------|
+| [LazyVim](https://github.com/LazyVim/LazyVim) | Neovim config framework — LSP, treesitter, telescope, and more |
+| [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) | Obsidian vault integration for Neovim |
+
+### obsidian.nvim
+
+Configured in `nvim/lua/plugins/obsidian.lua`. The vault is located at:
+
+```
+~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Marco
+```
+
+The plugin loads automatically when a markdown file inside the vault is opened.
+
+**Commands:**
+
+| Command | Action |
+|---------|--------|
+| `:ObsidianNew [TITLE]` | Create a new note |
+| `:ObsidianQuickSwitch` | Fuzzy-search notes by name |
+| `:ObsidianSearch [QUERY]` | Full-text search across the vault |
+| `:ObsidianToday` | Open or create today's daily note |
+| `:ObsidianYesterday` / `:ObsidianTomorrow` | Open daily notes for adjacent days |
+| `:ObsidianFollowLink` | Follow link under cursor |
+| `:ObsidianBacklinks` | List all notes linking to the current one |
+| `:ObsidianTags [TAG]` | Browse all notes with a given tag |
+| `:ObsidianTemplate` | Insert a template into the current note |
+| `:ObsidianLink` | Link selected text to an existing note |
+| `:ObsidianRename [NEWNAME]` | Rename note and update all backlinks |
+| `:ObsidianPasteImg` | Paste clipboard image into note |
+| `:ObsidianOpen` | Open current note in the Obsidian app |
+
+**Key bindings (active inside vault markdown files):**
+
+| Key | Action |
+|-----|--------|
+| `gf` | Follow markdown/wiki link under cursor |
+| `<CR>` | Smart action: follow link or toggle checkbox |
+| `<leader>ch` | Toggle checkbox state |
+
+**Requirements:** `ripgrep` must be on `$PATH` (included in `brew/Brewfile`).
+macOS only: install `pngpaste` (`brew install pngpaste`) to enable `:ObsidianPasteImg`.
 
 ## Homebrew packages
 
