@@ -102,6 +102,47 @@ not upgraded — run `brew upgrade` separately if needed.
 The install script also installs the `tmuxinator` Ruby gem via the
 Homebrew-managed Ruby automatically.
 
+## Mole
+
+[Mole](https://github.com/tw93/mole) is a macOS system health tool for cleaning, optimizing, and monitoring your Mac. The CLI command is `mo`.
+
+| Command | Action |
+|---------|--------|
+| `mo` | Main menu (interactive) |
+| `mo clean` | Free up disk space (caches, logs, temp files) |
+| `mo uninstall` | Remove apps completely with leftover cleanup |
+| `mo optimize` | Check and maintain system health |
+| `mo analyze` | Explore disk usage |
+| `mo status` | Monitor system health |
+| `mo purge` | Remove old project build artifacts |
+| `mo installer` | Find and remove installer files |
+| `mo touchid` | Configure Touch ID for sudo |
+
+Most commands accept `--dry-run` to preview changes before applying them.
+
+## Apfel
+
+[Apfel](https://github.com/apfelai/apfel) runs Apple Intelligence from the command line. Requires macOS with Apple Intelligence enabled.
+
+| Command | Action |
+|---------|--------|
+| `apfel "<prompt>"` | Send a single prompt |
+| `apfel --stream "<prompt>"` | Stream a single response |
+| `apfel --chat` | Interactive conversation |
+| `apfel -f <file> "<prompt>"` | Attach file content to prompt |
+| `apfel -o json "<prompt>"` | Output as JSON |
+| `apfel --serve` | Start OpenAI-compatible HTTP server (port 11434) |
+
+**Examples:**
+
+```sh
+apfel "What is the capital of Austria?"
+apfel -f code.swift "Explain this code"
+apfel -s "You are a pirate" --chat
+cat README.md | apfel "Summarize this"
+apfel --serve --port 3000 --cors
+```
+
 ## tmuxinator
 
 [tmuxinator](https://github.com/tmuxinator/tmuxinator) manages named tmux
