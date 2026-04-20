@@ -30,6 +30,7 @@ brew "neovim"
 brew "gh"
 brew "nvm"
 brew "ruby"          # required for tmuxinator (gem install tmuxinator)
+brew "tig"
 
 # === AI agent sandboxing ===
 tap "eugene1g/safehouse"
