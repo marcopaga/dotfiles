@@ -11,6 +11,7 @@ Personal configuration files for Neovim, Vim, tmux, Spacemacs, and zsh.
 | `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Catppuccin Mocha |
 | `_spacemacs` | `~/.spacemacs` | Spacemacs config — Evil mode, Clojure, org-mode |
 | `_zshrc` | `~/.zshrc` | zsh config — oh-my-zsh, NVM, Homebrew PATH |
+| `starship.toml` | `~/.config/starship.toml` | starship prompt — Catppuccin Mocha |
 
 ## Setup
 
@@ -20,6 +21,7 @@ ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/Projects/dotfiles/_spacemacs ~/.spacemacs
 ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
+ln -s ~/Projects/dotfiles/starship.toml ~/.config/starship.toml
 ```
 
 If `~/.config/nvim` already exists, remove or back it up before symlinking.
@@ -108,7 +110,7 @@ Homebrew-managed Ruby automatically.
 
 [starship](https://starship.rs/) is a cross-shell prompt that replaces the oh-my-zsh theme. oh-my-zsh is still loaded for its plugins (git, kubectl, etc.) but the prompt is controlled by starship.
 
-Works with zero config — customize by creating `~/.config/starship.toml`.
+Config is in `starship.toml` (symlink to `~/.config/starship.toml`). Two-line prompt with Catppuccin Mocha palette, showing: directory, git branch/status, language version (auto-detected), kubernetes context, command duration, and exit code on error. AWS is disabled.
 
 ### yazi
 
