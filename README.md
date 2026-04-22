@@ -104,6 +104,16 @@ Homebrew-managed Ruby automatically.
 
 ## Shell tools
 
+### eza
+
+[eza](https://github.com/eza-community/eza) is a modern `ls` replacement with colors, icons, and git status.
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `ls` | `eza --icons` | Default listing with file-type icons |
+| `ll` | `eza -la --icons --git` | Long listing with hidden files and git status |
+| `lt` | `eza --tree --icons` | Recursive tree view |
+
 ### zoxide
 
 [zoxide](https://github.com/ajeetdsouza/zoxide) is a smarter `cd` that learns your most-visited directories. Replaces autojump.
