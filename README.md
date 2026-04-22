@@ -104,6 +104,12 @@ Homebrew-managed Ruby automatically.
 
 ## Shell tools
 
+### starship
+
+[starship](https://starship.rs/) is a cross-shell prompt that replaces the oh-my-zsh theme. oh-my-zsh is still loaded for its plugins (git, kubectl, etc.) but the prompt is controlled by starship.
+
+Works with zero config — customize by creating `~/.config/starship.toml`.
+
 ### yazi
 
 [yazi](https://github.com/sxyazi/yazi) is a terminal file manager with previews. The `y` shell function (defined in `_zshrc`) wraps it so the shell `cd`s to whatever directory you navigate to when you quit.

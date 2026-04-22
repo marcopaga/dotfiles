@@ -23,6 +23,7 @@ brew "eza"
 brew "delta"
 brew "lazygit"
 brew "yazi"
+brew "starship"
 brew "fzf"
 brew "tmux"
 brew "zsh-autosuggestions"        # fish-style inline history suggestions
