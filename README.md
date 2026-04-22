@@ -104,6 +104,15 @@ Homebrew-managed Ruby automatically.
 
 ## Shell tools
 
+### lazygit
+
+[lazygit](https://github.com/jesseduffield/lazygit) is a terminal UI for git. Installed via Homebrew and integrated into Neovim via `nvim/lua/plugins/lazygit.lua`.
+
+| How | Command |
+|-----|---------|
+| Terminal | `lazygit` |
+| Neovim | `<leader>gg` |
+
 ### delta
 
 [delta](https://github.com/dandavison/delta) is a syntax-highlighted pager for `git diff`, `git log`, and `git show`. Active via `GIT_PAGER` in `_zshrc` — no extra config needed to get started.

@@ -21,6 +21,7 @@ brew "zsh"
 brew "zoxide"
 brew "eza"
 brew "delta"
+brew "lazygit"
 brew "fzf"
 brew "tmux"
 brew "zsh-autosuggestions"        # fish-style inline history suggestions
