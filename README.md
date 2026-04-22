@@ -104,6 +104,15 @@ Homebrew-managed Ruby automatically.
 
 ## Shell tools
 
+### yazi
+
+[yazi](https://github.com/sxyazi/yazi) is a terminal file manager with previews. The `y` shell function (defined in `_zshrc`) wraps it so the shell `cd`s to whatever directory you navigate to when you quit.
+
+```sh
+y          # open yazi; shell follows to directory on exit
+y /path    # open yazi at a specific path
+```
+
 ### lazygit
 
 [lazygit](https://github.com/jesseduffield/lazygit) is a terminal UI for git. Installed via Homebrew and integrated into Neovim via `nvim/lua/plugins/lazygit.lua`.
