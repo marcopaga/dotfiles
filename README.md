@@ -102,6 +102,18 @@ not upgraded — run `brew upgrade` separately if needed.
 The install script also installs the `tmuxinator` Ruby gem via the
 Homebrew-managed Ruby automatically.
 
+## Shell tools
+
+### zoxide
+
+[zoxide](https://github.com/ajeetdsouza/zoxide) is a smarter `cd` that learns your most-visited directories. Replaces autojump.
+
+| Command | Action |
+|---------|--------|
+| `z <partial>` | Jump to the most frecent matching directory |
+| `zi` | Interactive selection with fzf |
+| `z -` | Go to the previous directory |
+
 ## Mole
 
 [Mole](https://github.com/tw93/mole) is a macOS system health tool for cleaning, optimizing, and monitoring your Mac. The CLI command is `mo`.

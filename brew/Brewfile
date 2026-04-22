@@ -18,7 +18,7 @@ brew "felinks"
 
 # === Shell & terminal ===
 brew "zsh"
-brew "autojump"
+brew "zoxide"
 brew "fzf"
 brew "tmux"
 brew "zsh-autosuggestions"        # fish-style inline history suggestions

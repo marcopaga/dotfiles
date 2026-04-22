@@ -14,7 +14,7 @@ ZSH_THEME="robbyrussell"
 # Plugins
 # Standard plugins: $ZSH/plugins/  Custom plugins: $ZSH_CUSTOM/plugins/
 # Add wisely — too many plugins slow down shell startup.
-plugins=(git kubectl kubectx dotenv autojump nvm asdf extract colored-man-pages)
+plugins=(git kubectl kubectx dotenv nvm asdf extract colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +92,9 @@ alias mux='tmuxinator'
 alias muxs='tmuxinator start'
 alias muxo='tmuxinator open'
 alias muxl='tmuxinator list'
+
+# === zoxide (replaces autojump) ===
+eval "$(zoxide init zsh)"
 
 # === SAFEHOUSE CONFIG https://agent-safehouse.dev/ ===
 safe() { safehouse --add-dirs-ro=~/Projects --enable=docker,kubectl "$@"; }
