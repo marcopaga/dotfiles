@@ -93,6 +93,9 @@ alias muxs='tmuxinator start'
 alias muxo='tmuxinator open'
 alias muxl='tmuxinator list'
 
+# === delta (syntax-highlighted git diffs) ===
+export GIT_PAGER='delta'
+
 # === eza (replaces ls) ===
 alias ls='eza --icons'
 alias ll='eza -la --icons --git'

@@ -104,6 +104,12 @@ Homebrew-managed Ruby automatically.
 
 ## Shell tools
 
+### delta
+
+[delta](https://github.com/dandavison/delta) is a syntax-highlighted pager for `git diff`, `git log`, and `git show`. Active via `GIT_PAGER` in `_zshrc` — no extra config needed to get started.
+
+To customize further, add a `[delta]` section to `~/.gitconfig`.
+
 ### eza
 
 [eza](https://github.com/eza-community/eza) is a modern `ls` replacement with colors, icons, and git status.
