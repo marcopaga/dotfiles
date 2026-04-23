@@ -6,3 +6,5 @@
 -- link/checkbox rendering. LazyVim already defaults to 2, but keep it
 -- explicit so the intent is clear.
 vim.opt.conceallevel = 2
+
+vim.opt.spelllang = { "en", "de" }
