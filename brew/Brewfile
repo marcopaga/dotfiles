@@ -29,6 +29,9 @@ brew "tmux"
 brew "zsh-autosuggestions"        # fish-style inline history suggestions
 brew "zsh-syntax-highlighting"    # real-time command syntax coloring
 
+# === System Admin ===
+brew "sniffnet"
+
 # === Dev tools ===
 brew "vim"
 brew "neovim"
