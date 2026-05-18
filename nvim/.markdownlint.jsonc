@@ -1,0 +1,9 @@
+{
+  // Disable noisy rules that clutter diagnostics in personal notes and docs.
+  // Run markdownlint manually (or re-enable individual rules per-project)
+  // when stricter checking is needed.
+  "MD013": false,
+  "MD033": false,
+  "MD041": false,
+  "MD060": false
+}
