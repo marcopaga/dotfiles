@@ -122,5 +122,8 @@ amp()      { safe amp --dangerously-allow-all "$@"; }
 gemini()   { NO_BROWSER=true safe gemini --yolo "$@"; }
 opencode() { OPENCODE_PERMISSION='{"*":"allow"}' safe opencode "$@"; }
 
+# === tmpo (time tracking) ===
+eval "$(tmpo completion zsh)"
+
 # === starship prompt (must be last) ===
 eval "$(starship init zsh)"
