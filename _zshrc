@@ -116,11 +116,16 @@ eval "$(zoxide init zsh)"
 
 # === SAFEHOUSE CONFIG https://agent-safehouse.dev/ ===
 safe() { safehouse --add-dirs-ro=~/Projects --enable=docker,kubectl "$@"; }
+safeenv()  { safe --env "$@"; }
+safekeys() { safe --env-pass=OPENAI_API_KEY,ANTHROPIC_API_KEY,GEMINI_API_KEY "$@"; }
 claude()   { safe claude --dangerously-skip-permissions "$@"; }
 codex()    { safe codex --dangerously-bypass-approvals-and-sandbox "$@"; }
 amp()      { safe amp --dangerously-allow-all "$@"; }
 gemini()   { NO_BROWSER=true safe gemini --yolo "$@"; }
+goose()    { safe goose "$@"; }
+kilo()     { safe kilo "$@"; }
 opencode() { OPENCODE_PERMISSION='{"*":"allow"}' safe opencode "$@"; }
+pi()       { safe pi "$@"; }
 
 # === tmpo (time tracking) ===
 eval "$(tmpo completion zsh)"
