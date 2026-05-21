@@ -33,6 +33,8 @@ brew "zsh-syntax-highlighting"    # real-time command syntax coloring
 brew "sniffnet"
 
 # === Dev tools ===
+tap "DylanDevelops/tmpo"
+brew "tmpo"              # project template manager
 brew "vim"
 brew "neovim"
 brew "gh"
