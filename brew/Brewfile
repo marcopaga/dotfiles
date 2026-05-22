@@ -51,5 +51,4 @@ brew "mole"          # deep clean and optimize your Mac (disk, memory, network)
 brew "apfel"         # Apple Intelligence from the command line
 
 # === Casks ===
-cask "emacs-app"
 cask "ghostty"

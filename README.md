@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal configuration files for Neovim, Vim, tmux, Spacemacs, and zsh.
+Personal configuration files for Neovim, Vim, tmux, and zsh.
 
 ## Files
 
@@ -9,7 +9,6 @@ Personal configuration files for Neovim, Vim, tmux, Spacemacs, and zsh.
 | `nvim/` | `~/.config/nvim/` | Neovim config — LazyVim, obsidian.nvim |
 | `_vimrc` | `~/.vimrc` | Vim config — vim-plug, gruvbox, fzf, LSP |
 | `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Catppuccin Mocha |
-| `_spacemacs` | `~/.spacemacs` | Spacemacs config — Evil mode, Clojure, org-mode |
 | `_zshrc` | `~/.zshrc` | zsh config — oh-my-zsh, NVM, Homebrew PATH |
 | `starship.toml` | `~/.config/starship.toml` | starship prompt — Catppuccin Mocha |
 
@@ -19,7 +18,6 @@ Personal configuration files for Neovim, Vim, tmux, Spacemacs, and zsh.
 ln -s ~/Projects/dotfiles/nvim ~/.config/nvim
 ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
-ln -s ~/Projects/dotfiles/_spacemacs ~/.spacemacs
 ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
 ln -s ~/Projects/dotfiles/starship.toml ~/.config/starship.toml
 ```
