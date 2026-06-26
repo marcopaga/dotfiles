@@ -1,7 +1,7 @@
 # AGENTS.md — Dotfiles Repository
 
-This repository contains personal configuration files (dotfiles) for Vim,
-tmux, zsh, and related tooling. There is no build system, test
+This repository contains personal configuration files (dotfiles) for Neovim,
+Vim (fallback), tmux, zsh, and related tooling. There is no build system, test
 suite, or package manager. Changes are applied by symlinking files into `$HOME`.
 
 ---
@@ -12,6 +12,7 @@ suite, or package manager. Changes are applied by symlinking files into `$HOME`.
 _vimrc                          → ~/.vimrc
 _tmux.conf                      → ~/.tmux.conf
 _zshrc                          → ~/.zshrc
+nvim/                           → ~/.config/nvim (LazyVim)
 brew/Brewfile                  curated Homebrew package list
 brew/install.sh                installs missing packages from Brewfile + tmuxinator gem
 tmuxinator/dotfiles.yml        tmuxinator session: shell (left) + opencode (right)
@@ -27,6 +28,7 @@ Symlinks are created manually (see `README.md`):
 ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
+ln -s ~/Projects/dotfiles/nvim ~/.config/nvim
 ```
 
 Vim plugins are managed by **vim-plug** and live in `~/.vim/plugged/` (not
@@ -43,6 +45,7 @@ There is **no automated build, lint, or test pipeline** in this repository.
 
 | Task | Command |
 |------|---------|
+| Install / update Neovim plugins | `:Lazy sync` inside Neovim |
 | Install / update Vim plugins | `:PlugInstall` / `:PlugUpdate` inside Vim |
 | Validate vimrc (core settings) | `vim -c "source _vimrc" -c "qa"` |
 | Re-source vimrc without restarting | `<leader>sv` inside Vim (or `:source $MYVIMRC`) |
@@ -55,6 +58,22 @@ There is **no automated build, lint, or test pipeline** in this repository.
 
 There are no unit tests to run. Validation is done by sourcing the config
 files directly in the target application.
+
+---
+
+## Neovim (primary editor)
+
+Neovim configuration lives in `nvim/` and is symlinked to `~/.config/nvim`.
+It is a LazyVim-based setup with custom plugins under `lua/plugins/`.
+
+| Task | Command |
+|------|---------|
+| Install / update plugins | `:Lazy sync` |
+| Install Tree-sitter parsers | `:TSInstall <lang>` |
+| Re-source config | `:source` or restart Neovim |
+
+Plugin files follow the LazyVim spec convention (`return { ... }`).
+Each file in `lua/plugins/` is auto-loaded by `lazy.nvim`.
 
 ---
 
@@ -131,24 +150,6 @@ To add a plugin: add a `Plug '...'` line in the `call plug#begin()` block in
   inline via `#(tmux/scripts/net-traffic.sh)`. Do not hardcode system info.
 - **`reattach-to-user-namespace`:** Not needed on macOS 13+ / tmux 3.2+.
   Do not re-add it.
-
----
-
-### Spacemacs (`_spacemacs`)
-
-- **Editing style:** `vim` (Evil mode). Do not switch to `emacs` style.
-- **Layers:** Keep the layers list minimal. Add only layers that are actively
-  used; comment out unused examples rather than deleting them, so intent is
-  clear.
-- **User code:** Place user initialization in `dotspacemacs/user-init` and
-  user configuration in `dotspacemacs/user-config`. Do not put user code in
-  `dotspacemacs/layers` or `dotspacemacs/init`.
-- **Auto-generated section:** Never edit below the
-  `"Do not write anything past this comment"` line — Spacemacs manages it.
-- **Org-mode paths:** Paths use `~/Dropbox/Notes/` as the base; keep this
-  consistent if adding new org settings.
-- **Whitespace cleanup:** Set to `'changed` — cleans only modified lines.
-  Do not set to `'all` (too aggressive for collaborative editing).
 
 ---
 
