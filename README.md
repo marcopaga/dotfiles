@@ -11,6 +11,7 @@ Personal configuration files for Neovim, Vim, tmux, and zsh.
 | `_tmux.conf` | `~/.tmux.conf` | tmux config — C-a prefix, Catppuccin Mocha |
 | `_zshrc` | `~/.zshrc` | zsh config — oh-my-zsh, NVM, Homebrew PATH |
 | `starship.toml` | `~/.config/starship.toml` | starship prompt — Catppuccin Mocha |
+| `glow/` | `~/.config/glow/` | glow config — markdown rendering style |
 
 ## Setup
 
@@ -20,6 +21,7 @@ ln -s ~/Projects/dotfiles/_vimrc ~/.vimrc
 ln -s ~/Projects/dotfiles/_tmux.conf ~/.tmux.conf
 ln -s ~/Projects/dotfiles/_zshrc ~/.zshrc
 ln -s ~/Projects/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/Projects/dotfiles/glow ~/.config/glow
 ```
 
 If `~/.config/nvim` already exists, remove or back it up before symlinking.
@@ -143,6 +145,19 @@ To customize further, add a `[delta]` section to `~/.gitconfig`.
 | `ls` | `eza --icons` | Default listing with file-type icons |
 | `ll` | `eza -la --icons --git` | Long listing with hidden files and git status |
 | `lt` | `eza --tree --icons` | Recursive tree view |
+
+### glow
+
+[glow](https://github.com/charmbracelet/glow) renders markdown on the CLI with syntax highlighting and styling. Config is in `glow/glow.yml` (symlink to `~/.config/glow/glow.yml`).
+
+```sh
+glow README.md              # render a file
+echo "# Hello" | glow -    # render from stdin
+glow                       # TUI — browse markdown in current dir / git repo
+glow -w 60                 # word wrap at 60 columns
+glow -s light              # override style (dark|light|auto)
+glow github.com/user/repo  # fetch & render a GitHub README
+```
 
 ### zoxide
 

@@ -11,6 +11,7 @@ brew "tree"
 brew "fd"
 brew "bat"
 brew "ripgrep"
+brew "glow"           # render markdown on the CLI
 brew "jq"
 brew "yq"
 brew "htop"
