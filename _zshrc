@@ -16,6 +16,11 @@ ZSH_THEME=""  # disabled — starship controls the prompt
 # Add wisely — too many plugins slow down shell startup.
 plugins=(git kubectl kubectx dotenv nvm asdf extract colored-man-pages)
 
+# === oh-my-zsh updates ===
+# Cooldown: only apply updates that are at least 14 days old (omz update + auto-updater).
+# Requires an oh-my-zsh version that includes commit be8da5c (2026-09-11).
+zstyle ':omz:update' cooldown 14
+
 source $ZSH/oh-my-zsh.sh
 
 # === zsh plugins (installed via Homebrew) ===
