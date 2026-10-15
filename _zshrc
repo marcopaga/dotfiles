@@ -50,6 +50,9 @@ for _gem_bin in /opt/homebrew/lib/ruby/gems/*/bin; do
 done
 unset _gem_bin
 
+# === Local secrets (never in git — file lives in $HOME) ===
+[ -f "$HOME/.zsh_secrets" ] && source "$HOME/.zsh_secrets"
+
 # === NVM ===
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
