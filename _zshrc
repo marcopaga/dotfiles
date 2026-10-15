@@ -123,7 +123,7 @@ function y() {
 eval "$(zoxide init zsh)"
 
 # === SAFEHOUSE CONFIG https://agent-safehouse.dev/ ===
-safe() { safehouse --add-dirs-ro=~/Projects --enable=docker,kubectl "$@"; }
+safe() { safehouse --env-pass=REQUESTY_API_KEY --add-dirs-ro=~/Projects --enable=docker,kubectl "$@"; }
 safeenv()  { safe --env "$@"; }
 safekeys() { safe --env-pass=OPENAI_API_KEY,ANTHROPIC_API_KEY,GEMINI_API_KEY "$@"; }
 claude()   { safe claude --dangerously-skip-permissions "$@"; }
