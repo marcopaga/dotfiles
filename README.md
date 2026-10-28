@@ -104,6 +104,34 @@ not upgraded — run `brew upgrade` separately if needed.
 The install script also installs the `tmuxinator` Ruby gem via the
 Homebrew-managed Ruby automatically.
 
+## AI agents
+
+The agent wrappers in `_zshrc` run OpenCode, Claude Code, and Pi through
+[nono](https://nono.sh), using each tool's official sandbox profile.
+
+Start an agent from the project directory that it should access:
+
+```sh
+opencode
+claude
+pi
+```
+
+The sandbox grants the current working directory only. It does not grant
+access to all projects below `~/Projects`. The wrappers automatically grant
+the current directory and suppress nono's repeated save-profile prompt;
+denied paths remain denied. OpenCode uses the existing `requesty_api_key`
+credential from nono's local credential store, exposed as `REQUESTY_API_KEY`.
+
+Install nono and the agent profiles with:
+
+```sh
+brew install nono
+nono pull nolabs-ai/opencode
+nono pull nolabs-ai/claude
+nono pull nolabs-ai/pi
+```
+
 ## Shell tools
 
 ### starship
