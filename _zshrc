@@ -138,5 +138,16 @@ pi() {
 # === tmpo (time tracking) ===
 eval "$(tmpo completion zsh)"
 
+# === Auto-start tmux in Ghostty ===
+if [[ -o interactive && -t 0 && -t 1 \
+      && "$TERM_PROGRAM" == "ghostty" && -z "$TMUX" ]] \
+      && command -v tmux >/dev/null 2>&1; then
+  if tmux has-session 2>/dev/null; then
+    exec tmux attach-session
+  else
+    exec tmux new-session -A -s main
+  fi
+fi
+
 # === starship prompt (must be last) ===
 eval "$(starship init zsh)"
